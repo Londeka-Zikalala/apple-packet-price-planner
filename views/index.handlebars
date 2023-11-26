@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="inputs">
+         <h1>APPLE PACKET PLANNER</h1>
+        <form action="/input" method="POST">
+            <label for="box_identifier">Box Identifier:</label>
+            <input type="text" name="box_identifier" value="{{identifier}}">
+            
+            <label for="box_cost">Box Cost:</label>
+            <input type="number" name="box_cost" value="{{boxCost}}">
+            
+            <label for="number_of_apples_bought">Number of Apples Bought:</label>
+            <input type="number" name="number_of_apples_bought" value="{{numberOfApplesInBox}}">
+            
+            <label for="apples_to_sell">Apples to Sell:</label>
+            <input type="number" name="apples_to_sell" value="{{applesToSell}}">
+
+            <label for="percentage_profit">Profit:</label>
+            <input type="number" name="percentage_profit" value="{{percentageProfit}}">
+
+            <input type="submit" value="Calculate">
+        </form>
+        <div class="outputs">
+
+            <form action="/input/{{identifier}}" method="GET">
+
+                <h5>APPLE COST:</h5>
+                <span>R{{costPerApple}}</span>
+                
+                <h5>COST PER PACKET:</h5>
+                <span>R{{costPerPacket}}</span>
+                
+                <h5>NUMBER OF PACKETS:</h5>
+                <span>{{numberOfPackets}}</span>
+
+                <h5>RECOMMENDED SELL PRICE:</h5>
+                <span>R{{recommendedSellPrice}}</span>
+            </form>
+        </div>
+    </div>
+</div>
+
+
